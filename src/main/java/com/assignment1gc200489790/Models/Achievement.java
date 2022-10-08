@@ -1,14 +1,17 @@
 package com.assignment1gc200489790.Models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
+
 public class Achievement {
     private long steamGameID;
+    @JsonProperty("name")
     private String achievementName;
+    @JsonProperty("percent")
     private double percentPlayers;
 
-    public Achievement(long steamGameID, String achievementName, double percentPlayers) {
-        setSteamGameID(steamGameID);
-        setAchievementName(achievementName);
-        setPercentPlayers(percentPlayers);
+
+    public Achievement() {
     }
 
     public long getSteamGameID() {
@@ -49,5 +52,14 @@ public class Achievement {
         else {
             throw new IllegalArgumentException("Illegal percent value...");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Achievement{" +
+                "steamGameID=" + steamGameID +
+                ", achievementName='" + achievementName + '\'' +
+                ", percentPlayers=" + percentPlayers +
+                '}';
     }
 }

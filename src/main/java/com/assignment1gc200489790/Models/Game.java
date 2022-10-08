@@ -3,6 +3,7 @@ package com.assignment1gc200489790.Models;
 import java.time.LocalDate;
 
 public class Game {
+
     private long steamGameID;
     private String gameName;
     private String publisher;
