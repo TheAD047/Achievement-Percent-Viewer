@@ -42,7 +42,7 @@ public class Game {
     }
 
     public void setGameName(String gameName) {
-        if(!gameName.isEmpty() && gameName.matches("[a-zA-Z\\s]*")) {
+        if(!gameName.isEmpty()) {
             this.gameName = gameName;
         }
         else {
@@ -66,5 +66,15 @@ public class Game {
         else {
             throw new IllegalArgumentException("Release Year cant be less than 1900 or in the future...");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "steamGameID=" + steamGameID +
+                ", gameName='" + gameName + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", releaseYear=" + releaseYear +
+                '}';
     }
 }

@@ -1,28 +1,43 @@
 package com.assignment1gc200489790;
 
-import com.assignment1gc200489790.API.APIUtil;
-import com.assignment1gc200489790.Models.Achievement;
-import com.assignment1gc200489790.Models.AchievementPercentages;
-import com.assignment1gc200489790.Models.ApiResponse;
+import com.assignment1gc200489790.DBUtility.DBUtil;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class HelloApplication {
-    /*@Override
+import java.io.IOException;
+
+public class HelloApplication extends Application {
+    @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
-    }*/
+    }
 
     public static void main(String[] args) {
-        //launch();
+        launch();
 
-        ApiResponse response = APIUtil.apiCall();
+        DBUtil.getGames();
+        /*
+        I generated the data.sql file using this code
+
+        0.provide the matching game object for the achievements since this was done early on DB retrieval was not built for this object
+        Game game = new Game(440, "Team Fortress 2", "Valve", 2007);
+
+        1.made an api call with the steam game ID as a param
+        ApiResponse response = APIUtil.apiCall(game.getSteamGameID());
+
+        2.get the results
         Achievement[] achievements = response.getAchievementPercentages().getAchievements();
-        for(Achievement a : achievements) {
-            a.setSteamGameID(730);
-            System.out.println(a);
-        }
+
+        3.pass them into the database
+        DBUtil.insertAchievement(game, achievements);
+
+        4.print out the sql statements to the console and copy them to the data file
+         */
     }
 }

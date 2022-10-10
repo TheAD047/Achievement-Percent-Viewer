@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Assignment1-GC-200489790" options="--add-exports com.fasterxml.jackson.databind/com.fasterxml.jackson=com.assignment1gc200489790" />
+      <module name="Assignment1-GC-200489790" options="" />
     </option>
   </component>
 </project>

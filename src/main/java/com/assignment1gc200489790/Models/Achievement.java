@@ -1,7 +1,6 @@
 package com.assignment1gc200489790.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.gson.annotations.SerializedName;
 
 public class Achievement {
     private long steamGameID;
@@ -10,8 +9,13 @@ public class Achievement {
     @JsonProperty("percent")
     private double percentPlayers;
 
-
     public Achievement() {
+    }
+
+    public Achievement(long steamGameID, String achievementName, double percentPlayers) {
+        setSteamGameID(steamGameID);
+        setAchievementName(achievementName);
+        setPercentPlayers(percentPlayers);
     }
 
     public long getSteamGameID() {
