@@ -108,7 +108,7 @@ public class DBUtil {
     }
 
     public static void insertGame(Game game) {
-        String sql = "INSERT INTO gaems VALUES(?,?,?,?)";
+        String sql = "INSERT INTO games VALUES(?,?,?,?)";
         if(!isGamePresent(game)) {
             try(
                     Connection connection = startConnection();

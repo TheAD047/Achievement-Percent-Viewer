@@ -1,6 +1,5 @@
 package com.assignment1gc200489790;
 
-import com.assignment1gc200489790.Controollers.SceneController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

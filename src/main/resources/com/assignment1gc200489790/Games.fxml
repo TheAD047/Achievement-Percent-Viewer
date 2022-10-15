@@ -9,15 +9,20 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment1gc200489790.Controollers.GameController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment1gc200489790.Controllers.GameController">
    <children>
       <BorderPane layoutX="158.0" layoutY="56.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
             <ButtonBar prefHeight="43.0" prefWidth="418.0" BorderPane.alignment="CENTER">
               <buttons>
-                <Button fx:id="ViewChartBTN" mnemonicParsing="false" onAction="#getChartView" text="View Achievements" />
-                  <Button fx:id="AddGameBTN" mnemonicParsing="false" onAction="#getAddGameView" text="Add A Game" />
+                <Button fx:id="ViewChartBTN" mnemonicParsing="false" onAction="#getChartView" text="View Achievements" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Button>
+                  <Button fx:id="AddGameBTN" mnemonicParsing="false" onAction="#getAddGameView" text="Add A Game" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Button>
               </buttons>
             </ButtonBar>
          </bottom>
@@ -31,10 +36,10 @@
          <center>
             <TableView fx:id="gameTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn fx:id="steamIDCol" prefWidth="100.0" text="Steam ID" />
-                <TableColumn fx:id="nameCol" prefWidth="263.2000732421875" text="Game Name" />
-                  <TableColumn fx:id="yearCol" minWidth="0.0" prefWidth="87.199951171875" text="Release Year" />
-                  <TableColumn fx:id="publisherCol" prefWidth="145.5999755859375" text="Publisher" />
+                <TableColumn fx:id="steamIDCol" editable="false" prefWidth="170.39998984336853" text="Steam ID" />
+                <TableColumn fx:id="nameCol" editable="false" prefWidth="420.2666015625" text="Game Name" />
+                  <TableColumn fx:id="yearCol" editable="false" minWidth="0.0" prefWidth="233.33343505859375" text="Release Year" />
+                  <TableColumn fx:id="publisherCol" editable="false" prefWidth="194.93328857421875" text="Publisher" />
               </columns>
             </TableView>
          </center>
