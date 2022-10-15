@@ -10,9 +10,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class DBUtil {
-    private static String user = "root";
-    private static String password = "root";
-    private static String url = "jdbc:mysql://localhost:3306/GC200489790";
+    private static String user = "Arin200489790";
+    private static String password = "YZhyn-tHO6";
+    private static String url = "jdbc:mysql://172.31.22.43/Arin200489790";
 
     private static Connection startConnection() {
         try {
@@ -27,7 +27,7 @@ public class DBUtil {
     }
 
     public static ArrayList<Achievement> getAchievementsForGame(long gameID) {
-        String sql = "SELECT * FROM achievements WHERE steamGameID = ?";
+        String sql = "SELECT * FROM achievements WHERE steamGameID = ? LIMIT 30";
         ArrayList<Achievement> achievements = new ArrayList<Achievement>();
         try(
                 Connection connection = startConnection();
@@ -42,7 +42,6 @@ public class DBUtil {
                                                             resultSet.getString("achievementName"),
                                                             resultSet.getDouble("percent")
                                                             );
-                System.out.println(achievement);
                 achievements.add(achievement);
             }
 
@@ -70,7 +69,6 @@ public class DBUtil {
                                         resultSet.getString("publisher"),
                                         resultSet.getInt("releaseYear")
                                         );
-                System.out.println(game);
                 games.add(game);
             }
             return games;

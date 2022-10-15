@@ -70,11 +70,6 @@ public class Game {
 
     @Override
     public String toString() {
-        return "Game{" +
-                "steamGameID=" + steamGameID +
-                ", gameName='" + gameName + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", releaseYear=" + releaseYear +
-                '}';
+        return gameName;
     }
 }
