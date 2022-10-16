@@ -1,0 +1,53 @@
+.root{
+    -fx-background-color: rgba(150, 155, 199, 1);
+}
+
+#title{
+    -fx-font-size: 32pt;
+    -fx-font-family: "Arial Rounded MT Bold";
+}
+
+.chart, #container {
+    -fx-border-color: rgba(0, 0, 0, 1);
+    -fx-border-radius: 10pt;
+}
+
+.button {
+    -fx-background-color: rgba(10, 75, 150, 0.62);
+    -fx-text-fill: rgba(255,255,255,0.75);
+}
+
+.button:hover {
+    -fx-background-color: rgba(10, 75, 150, 0.31);
+}
+
+#gameComboBox {
+    -fx-font-size: 16pt;
+    -fx-text-fill: rgba(255,255,255,0.75);
+    -fx-background-color: rgba(107, 89, 113, 0.9);
+}
+
+#gameComboBox:hover {
+    -fx-background-color: rgba(157, 120, 144, 0.9);
+}
+
+#steamIDCol, #nameCol, #yearCol, #publisherCol {
+    -fx-font-size: 14pt;
+    -fx-background-color: rgba(100, 165, 196, 1);
+}
+
+#steamIDCol:hover, #nameCol:hover, #yearCol:hover, #publisherCol:hover {
+    -fx-background-color: rgba(147, 201, 224, 1);
+}
+
+.text-field {
+    -fx-background-color: rgba(150, 155, 199, 1);
+    -fx-border-color: rgba(100,0,0,0.75);
+    -fx-border-radius: 10pt;
+    -fx-font-size: 20pt;
+}
+
+
+
+
+

@@ -6,8 +6,6 @@ import com.assignment1gc200489790.Models.Game;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class DBUtil {
     private static String user = "Arin200489790";
@@ -27,7 +25,7 @@ public class DBUtil {
     }
 
     public static ArrayList<Achievement> getAchievementsForGame(long gameID) {
-        String sql = "SELECT * FROM achievements WHERE steamGameID = ? LIMIT 30";
+        String sql = "SELECT * FROM achievements WHERE steamGameID = ? LIMIT 20";
         ArrayList<Achievement> achievements = new ArrayList<Achievement>();
         try(
                 Connection connection = startConnection();

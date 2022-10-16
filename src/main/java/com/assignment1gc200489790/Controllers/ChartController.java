@@ -6,10 +6,7 @@ import com.assignment1gc200489790.Models.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -20,10 +17,9 @@ import java.util.ResourceBundle;
 
 public class ChartController implements Initializable {
 
-    private String title;
 
     @FXML
-    private BarChart<String, Double> chart;
+    private BarChart<Double, String> chart;
 
     @FXML
     private ComboBox<Game> gameComboBox;
@@ -38,7 +34,7 @@ public class ChartController implements Initializable {
     private CategoryAxis yAxis;
 
     @FXML
-    private Label sceneTitle;
+    private Label title;
 
     @FXML
     void getGamesView(ActionEvent event) {
@@ -52,18 +48,17 @@ public class ChartController implements Initializable {
 
     @FXML
     void changeGame(ActionEvent event) {
-        sceneTitle.setText(gameComboBox.getValue().getGameName());
+        title.setText(gameComboBox.getValue().getGameName());
 
-        XYChart.Series<String, Double> data = new XYChart.Series<>();
-        XYChart.Series<String, Double> empty = new XYChart.Series<>();
+        XYChart.Series<Double, String> data = new XYChart.Series<>();
 
         for(Achievement achievement : DBUtil.getAchievementsForGame(gameComboBox.getValue().getSteamGameID())){
-            data.getData().add(new XYChart.Data<>(achievement.getAchievementName(), achievement.getPercentPlayers()));
+            data.getData().add(new XYChart.Data<>(achievement.getPercentPlayers(),  achievement.getAchievementName()));
         }
 
         chart.getData().remove(0, chart.getData().size());
-
-        chart.getData().addAll(data);
+        data.setName("Percent(%) of Players who have completed the achievement");
+        chart.getData().add(data);
     }
 
     @Override
@@ -71,7 +66,6 @@ public class ChartController implements Initializable {
         ArrayList<Game> games = DBUtil.getGames();
         gameComboBox.getItems().addAll(games);
         gameComboBox.setValue(games.get(0));
-
 
         changeGame(new ActionEvent());
     }
