@@ -1,4 +1,11 @@
 package com.assignment1gc200489790.Controllers;
+/*
+ * Name: Arin Dhiman
+ * Student num: 200489790
+ * Date: 15 OCT 2022
+ * Description: Controller for the Chart.fxml file
+ */
+
 
 import com.assignment1gc200489790.DBUtility.DBUtil;
 import com.assignment1gc200489790.Models.Achievement;
@@ -36,6 +43,9 @@ public class ChartController implements Initializable {
     @FXML
     private Label title;
 
+    /**
+     * Changes View to the Games.fxml
+     */
     @FXML
     void getGamesView(ActionEvent event) {
         try {
@@ -46,6 +56,11 @@ public class ChartController implements Initializable {
         }
     }
 
+    /**
+     * This method runs whenever value in the gameComboBox changes
+     * To populate the chart upon startup this is called in the initialize method as well
+     * Also changes the label at the top to the gam Name
+     */
     @FXML
     void changeGame(ActionEvent event) {
         title.setText(gameComboBox.getValue().getGameName());
@@ -61,6 +76,9 @@ public class ChartController implements Initializable {
         chart.getData().add(data);
     }
 
+    /**
+     * Populates the gameComboBox and the chart upon start up
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Game> games = DBUtil.getGames();

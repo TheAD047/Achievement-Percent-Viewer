@@ -1,4 +1,10 @@
 package com.assignment1gc200489790.Controllers;
+/*
+ * Name: Arin Dhiman
+ * Student num: 200489790
+ * Date: 15 OCT 2022
+ * Description: Controller for the Games.fxml file
+ */
 
 
 import com.assignment1gc200489790.DBUtility.DBUtil;
@@ -39,6 +45,9 @@ public class GameController implements Initializable {
     private TableColumn<Game, Integer> yearCol;
 
 
+    /**
+     * Go to CreateGam.fxml view
+     */
     @FXML
     void getAddGameView(ActionEvent event) {
         try {
@@ -49,6 +58,9 @@ public class GameController implements Initializable {
         }
     }
 
+    /**
+     * Go to Chart.fxml view
+     */
     @FXML
     void getChartView(ActionEvent event) {
         try {
@@ -60,6 +72,11 @@ public class GameController implements Initializable {
     }
 
 
+    /**
+     * This runs before the view is completely rendered to populate the table
+     * Primes the table to hold the right values
+     * Then adds all the Games from the DB
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         steamIDCol.setCellValueFactory(new PropertyValueFactory<>("steamGameID"));

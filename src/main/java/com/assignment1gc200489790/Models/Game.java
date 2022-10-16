@@ -1,4 +1,10 @@
 package com.assignment1gc200489790.Models;
+/*
+ * Name: Arin Dhiman
+ * Student num: 200489790
+ * Date: 15 OCT 2022
+ * Description: Model class for Game objects
+ */
 
 import java.time.LocalDate;
 
@@ -16,6 +22,9 @@ public class Game {
         setPublisher(publisher);
     }
 
+    /**
+     * Getters for each attribute
+     */
     public long getSteamGameID() {
         return steamGameID;
     }
@@ -32,6 +41,9 @@ public class Game {
         return releaseYear;
     }
 
+    /**
+     * Setter method for each attribute with validation
+     */
     public void setSteamGameID(long steamGameID) {
         if(steamGameID >= 0) {
             this.steamGameID = steamGameID;

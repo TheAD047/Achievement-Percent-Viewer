@@ -1,23 +1,41 @@
 package com.assignment1gc200489790.Models;
+/*
+ * Name: Arin Dhiman
+ * Student num: 200489790
+ * Date: 15 OCT 2022
+ * Description: Model class for achievement
+ */
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Achievement {
+
     private long steamGameID;
+
     @JsonProperty("name")
     private String achievementName;
+
     @JsonProperty("percent")
     private double percentPlayers;
 
+    /**
+     * default constructor for Jackson library to instantiate an achievement object from JSON feed
+     */
     public Achievement() {
     }
 
+    /**
+     * All args constructor for retrieving achievement objects from DB
+     */
     public Achievement(long steamGameID, String achievementName, double percentPlayers) {
         setSteamGameID(steamGameID);
         setAchievementName(achievementName);
         setPercentPlayers(percentPlayers);
     }
 
+    /**
+     * Getters for each attribute
+     */
     public long getSteamGameID() {
         return steamGameID;
     }
@@ -30,6 +48,9 @@ public class Achievement {
         return percentPlayers;
     }
 
+    /**
+     * Setters for each attribute with validation
+     */
     public void setSteamGameID(long steamGameID) {
         if(steamGameID >= 0) {
             this.steamGameID = steamGameID;

@@ -6,4 +6,5 @@
     <p>Rest of the data present in the DB was added using the creat a game scene</p>
     <p>ALL STEAM APPS WILL NOT RETURN A NON EMPTY RESULT SET</p>
     <p>Try steamID: 546560, name: Half-Life;Alyx, release year:2020, publisher: valve</p>
+    <p>API Call Link: http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=[]&format=json</p>
 </html>

@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment1gc200489790.Controllers.GameController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment1gc200489790.Controllers.GameController">
    <children>
       <BorderPane layoutX="158.0" layoutY="56.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <bottom>
-            <ButtonBar prefHeight="43.0" prefWidth="418.0" BorderPane.alignment="CENTER">
-              <buttons>
-                <Button fx:id="ViewChartBTN" mnemonicParsing="false" onAction="#getChartView" text="View Achievements" textAlignment="CENTER">
-                     <font>
-                        <Font size="25.0" />
-                     </font></Button>
-                  <Button fx:id="AddGameBTN" mnemonicParsing="false" onAction="#getAddGameView" text="Add A Game" textAlignment="CENTER">
-                     <font>
-                        <Font size="25.0" />
-                     </font></Button>
-              </buttons>
-            </ButtonBar>
-         </bottom>
          <top>
-            <Label prefHeight="43.0" prefWidth="129.0" text="Game List" textAlignment="CENTER" textOverrun="CLIP" BorderPane.alignment="CENTER">
+            <Label fx:id="title" prefHeight="62.0" prefWidth="214.0" text="Game List" textAlignment="CENTER" textOverrun="CLIP" BorderPane.alignment="CENTER">
                <font>
                   <Font size="29.0" />
                </font>
@@ -43,6 +31,39 @@
               </columns>
             </TableView>
          </center>
+         <bottom>
+            <GridPane prefHeight="91.0" prefWidth="998.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="105.6" minHeight="3.199963378906233" prefHeight="92.26673583984375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="91.19999999999999" minHeight="0.0" prefHeight="13.333264160156247" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="24.000040435791007" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <BorderPane>
+                     <center>
+                      <Button fx:id="ViewChartBTN" mnemonicParsing="false" onAction="#getChartView" text="View Achievements" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Button>
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="AddGameBTN" mnemonicParsing="false" onAction="#getAddGameView" text="Add A Game" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Button>
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

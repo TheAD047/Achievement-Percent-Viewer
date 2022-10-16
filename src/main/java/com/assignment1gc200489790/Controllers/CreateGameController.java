@@ -1,4 +1,11 @@
 package com.assignment1gc200489790.Controllers;
+/*
+ * Name: Arin Dhiman
+ * Student num: 200489790
+ * Date: 15 OCT 2022
+ * Description: Controller for CreateGame.fxml file
+ */
+
 
 import com.assignment1gc200489790.API.APIUtil;
 import com.assignment1gc200489790.DBUtility.DBUtil;
@@ -35,6 +42,9 @@ public class CreateGameController {
     @FXML
     private Button getGamesViewBTN;
 
+    /**
+     * Go To the Games.fxml view
+     */
     @FXML
     void getGamesView(ActionEvent event) {
         try {
@@ -45,6 +55,13 @@ public class CreateGameController {
         }
     }
 
+    /**
+     * Takes in all the values in the text fields and tries to add the game
+     * Calls the api to fetch achievements for that game and if there is data returned
+     * it is added to the DB, It takes quite a bit of time
+     * please wait for text to appear at the bottom of the scene
+     * keep an eye on the console for "setText Didnt work" message if it is taking a long time
+     */
     @FXML
     void createGame(ActionEvent event) {
         try{
@@ -73,8 +90,17 @@ public class CreateGameController {
         }
     }
 
+    /**
+     * dedicated method to set the text value for the label
+     * because for some reason I got null pointer exception
+     */
     void updateTitle(ActionEvent event ,String text) {
-        statusLabel.setText(text);
+        try {
+            statusLabel.setText(text);
+        }
+        catch (Exception e) {
+            System.out.println("setText Didnt work...");
+        }
     }
 
 }
