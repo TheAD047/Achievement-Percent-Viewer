@@ -74,7 +74,7 @@
             </GridPane>
          </center>
          <top>
-            <Label text="Create A Game" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Label fx:id="title" text="Create A Game" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <font>
                   <Font size="29.0" />
                </font>
@@ -102,6 +102,13 @@
               </rowConstraints>
             </GridPane>
          </right>
+         <bottom>
+            <Label fx:id="statusLabel" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

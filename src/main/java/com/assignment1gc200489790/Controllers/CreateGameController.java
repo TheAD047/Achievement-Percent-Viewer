@@ -10,11 +10,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
 import java.security.InvalidParameterException;
-import java.util.ResourceBundle;
 
 public class CreateGameController {
+
+    @FXML
+    private Label statusLabel;
 
     @FXML
     private Label title;
@@ -47,6 +48,7 @@ public class CreateGameController {
     @FXML
     void createGame(ActionEvent event) {
         try{
+            updateTitle(event, "Adding Please Wait...");
             Game game = new Game(
                     Long.parseLong(fieldForID.getText()),
                     fieldForName.getText(),
@@ -72,8 +74,7 @@ public class CreateGameController {
     }
 
     void updateTitle(ActionEvent event ,String text) {
-        title.setText(text);
+        statusLabel.setText(text);
     }
-
 
 }
